@@ -1,0 +1,15 @@
+{
+  "name": "medical-appointment",
+  "version": "1.0.0",
+  "description": "It's an application for managing medical appointments based on `Node.js`, `PostgreSQL`, etc.",
+  "main": "index.js",
+  "scripts": {
+    "dev":"nodemon ./src/index.js -e js --watch"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^2.0.4"
+  }
+}

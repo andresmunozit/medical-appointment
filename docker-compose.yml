@@ -1,0 +1,15 @@
+version: '3.1'
+services:
+    web:
+        build: .
+        command: npm run dev
+        ports:
+            - 3000:3000
+        env_file: ./config/dev.env
+        volumes:
+            - ./src:/usr/src/app/src
+    db:
+        image: postgres:12.3
+        ports:
+            - 5432:5432
+        env_file: ./config/dev.env
