@@ -4,6 +4,7 @@
   "description": "It's an application for managing medical appointments based on `Node.js`, `PostgreSQL`, etc.",
   "main": "index.js",
   "scripts": {
+    "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js -e js --watch",
     "test": "jest --verbose --watch"
   },
