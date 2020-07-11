@@ -32,3 +32,14 @@ It's an application for managing medical appointments based on `Node.js`, `Postg
 - Create `.gitignore` file
 - Delete intermediate `node_modules`
 - Run Docker Compose
+
+## Install dependencies in containers
+
+```
+docker exec -t CONTAINER_NAME npm install PACKAGE_NAME (--save-dev)
+// Example
+docker exec -t medical-appointment_web_1 npm install jest --save-dev
+docker exec -t medical-appointment_web_1 npm install express
+```
+
+Restart `docker-compose` (`CTRL + C`).

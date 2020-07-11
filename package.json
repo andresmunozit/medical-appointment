@@ -4,12 +4,21 @@
   "description": "It's an application for managing medical appointments based on `Node.js`, `PostgreSQL`, etc.",
   "main": "index.js",
   "scripts": {
-    "dev":"nodemon ./src/index.js -e js --watch"
+    "dev": "nodemon ./src/index.js -e js --watch",
+    "test": "jest --verbose --watch"
+  },
+  "jest":{
+    "testEnvironment":"node"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "nodemon": "^2.0.4"
+    "jest": "^26.1.0",
+    "nodemon": "^2.0.4",
+    "supertest": "^4.0.2"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
   }
 }

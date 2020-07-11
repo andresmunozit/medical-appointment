@@ -7,7 +7,15 @@ services:
             - 3000:3000
         env_file: ./config/dev.env
         volumes:
-            - ./src:/usr/src/app/src
+            - ./:/usr/src/app
+            - /usr/src/app/node_modules
+    web_test:
+        build: .
+        command: npm run test
+        env_file: ./config/test.env
+        volumes:
+            - ./:/usr/src/app
+            - /usr/src/app/node_modules
     db:
         image: postgres:12.3
         ports:
