@@ -6,10 +6,11 @@
   "scripts": {
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js -e js --watch",
-    "test": "jest --verbose --watch"
+    "test": "jest --verbose --watch",
+    "migrate": "node ./src/db/migrations.js"
   },
-  "jest":{
-    "testEnvironment":"node"
+  "jest": {
+    "testEnvironment": "node"
   },
   "keywords": [],
   "author": "",
@@ -20,6 +21,8 @@
     "supertest": "^4.0.2"
   },
   "dependencies": {
-    "express": "^4.17.1"
+    "express": "^4.17.1",
+    "pg": "^8.3.0",
+    "snake-case": "^3.0.3"
   }
 }
