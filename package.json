@@ -7,8 +7,8 @@
     "start": "node ./src/index.js",
     "dev": "nodemon ./src/index.js -e js --watch",
     "test": "jest --verbose --watch",
-    "test-ci": "jest --verbose --watchAll",
-    "test-coverage": "jest --verbose --watchAll --coverage=true",
+    "test-coverage": "jest --verbose --coverage=true",
+    "test-ci": "jest --verbose --ci --coverage=true",
     "migrate": "node ./src/db/migrations.js"
   },
   "jest": {
