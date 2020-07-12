@@ -3,11 +3,12 @@ const Patient = require('../models/patient');
 
 const router = new Router();
 
-router.post('/', (req,res) => {
-    const {id, name, lastName, dateOfBirth, gender} = req.body;
-    const patient = new Patient(id, name, lastName, dateOfBirth, gender);
-    if(patient.save()) return res.json(patient);
-    res.status(500).json();
+router.post('/', async (req,res) => {
+    const {name, lastName, dateOfBirth, gender} = req.body;
+    const patient = new Patient(name, lastName, gender, dateOfBirth);
+    const newPatient = await patient.create();
+    if(newPatient.error) return res.status(500).json({error: newPatient.error});
+    res.json(newPatient);
 });
 
 router.get('/', (req, res) => {
