@@ -1,5 +1,6 @@
 # Node, Postgres, Docker Boilerplate 
 [![Build Status](https://travis-ci.org/andresmunozit/medical-appointment.svg?branch=master)](https://travis-ci.org/andresmunozit/medical-appointment)
+
 It's an application for managing medical appointments based on `Node.js`, `PostgreSQL`, etc.
 
 ## Setup development environment
