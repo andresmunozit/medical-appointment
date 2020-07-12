@@ -10,12 +10,11 @@ PGModel.prototype.create = async function(){
     const tableName = this.constructor.name.toLowerCase();
     const fieldNames = Object.keys(this).map( field => snakeCase(field));
     const values = Object.values(this);
-
-    const query = new queries.InsertInto(tableName, fieldNames, values);
+    const crateQuery = new queries.InsertInto(tableName, fieldNames, values);
     try{
-        const result = await pool.query(query.text, query.values);
-        const newPatient = result.rows[0];
-        return newPatient;
+        const result = await pool.query({...crateQuery}); // text and value
+        const newRecord = result.rows[0];
+        return newRecord;
     } catch (error){
         return {error: error.toString()}
     };
