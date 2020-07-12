@@ -8,11 +8,7 @@ services:
 env:
     # The PORT variable is not actually being used for the testing environment
     # - PORT=3000
-    - POSTGRES_PASSWORD=''
-    - DB_USER=postgres
-    - DB_HOST=127.0.0.1
-    - DB_NAME=ma_test
-    - DB_PORT=5432
+    - DB_USER=postgres DB_HOST=127.0.0.1 DB_NAME=ma_test DB_PORT=5432
 # Save a directory for future builds instead of recreating
 # After a build and before install it copies node_modules
 cache: 
