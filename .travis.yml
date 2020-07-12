@@ -1,0 +1,38 @@
+language: node_js
+node_js:
+  - "14"
+# Distro of Linux
+dist: trusty
+services:
+    - postgresql
+env:
+    # The PORT variable is not actually being used for the testing environment
+    # - PORT=3000
+    - POSTGRES_PASSWORD=''
+    - DB_USER=postgres
+    - DB_HOST=127.0.0.1
+    - DB_NAME=ma_test
+    - DB_PORT=5432
+# Save a directory for future builds instead of recreating
+# After a build and before install it copies node_modules
+cache: 
+    directories:
+        - node_modules
+# How to execute the project into that virtual machine
+install:
+    - npm install
+
+before_script:
+    - psql -c 'CREATE DATABASE ma_test;' -U postgres
+
+# Test
+script: 
+    # Nohup: If the shell is closed, don't kill anything this command creates
+    # npm run start: run the server (obviously)
+    # Run this command in a subshell in background
+    # - nohup npm run start &
+    # - sleep 3 # This avoid the test to try to access to the application before it actually starts
+    # - npm run test
+    - nohup npm run migrate &
+    - sleep 3
+    - npm run test-ci
