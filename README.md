@@ -46,11 +46,12 @@ docker exec -t medical-appointment_web_1 npm install express
 
 Restart `docker-compose` (`CTRL + C`).
 
-Migrations:
-```
-docker exec -t medical-appointment_web_1 npm run migrate
-```
 Connect to db container:
 ```
 docker exec -it medical-appointment_db_1 /bin/bash
+```
+
+Sequelize synchronization (tables creation):
+```
+docker exec -t medical-appointment_web_1 npm run sequelize-sync
 ```
