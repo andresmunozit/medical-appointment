@@ -9,7 +9,7 @@
     "test": "jest --verbose --watch",
     "test-coverage": "jest --verbose --coverage=true",
     "test-ci": "jest --verbose --ci --coverage=true",
-    "migrate": "node ./src/db/migrations.js"
+    "sequelize-sync": "node ./src/db/sequelize/sync.js"
   },
   "jest": {
     "testEnvironment": "node"
